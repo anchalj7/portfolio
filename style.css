@@ -170,6 +170,7 @@ body {
 
 .services {
   background-color: #c6b0a2;
+  min-height: 100vh;
   color: aliceblue;
   font-size: 20px;
   line-height: 1.4;
@@ -177,6 +178,7 @@ body {
 }
 
 .sub-title {
+  background: #c6b0a2;
   text-align: center;
   font-size: 60px;
   padding-bottom: 70px;
@@ -192,7 +194,7 @@ body {
 
 .services-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, mimax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
 }
@@ -237,6 +239,142 @@ body {
   opacity: 0;
   animation: slideTop 1s ease forwards;
   animation-delay: 1s;
+}
+.read:hover {
+  box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px white, 0 0 100px white;
+}
+
+section {
+  background: #c6b0a2;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.container1 {
+  width: 600px;
+  height: 500px;
+  padding: 75px 90px;
+  margin-left: 120px;
+}
+.heading1 {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  margin-bottom: 50px;
+}
+
+.bar {
+  font-size: 23px;
+}
+
+.technical-bars .bar {
+  margin-top: 40px;
+}
+.technical-bars .bar:first-child {
+  margin-top: 0;
+}
+.technical-bars .bar:last-child {
+  margin-bottom: 0;
+}
+
+.technical-bars .bar .info {
+  margin-bottom: 5px;
+}
+.technical-bars .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+.technical-bars .bar .progress-line {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.technical-bars .bar .progress-line span {
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  border-radius: 10px;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.progress-line .html span {
+  width: 90%;
+}
+.progress-line .css span {
+  width: 60%;
+}
+.progress-line .js span {
+  width: 50%;
+}
+.progress-line .react span {
+  width: 75%;
+}
+.progress-line .tailwind span {
+  width: 80%;
+}
+.progress-line span::after {
+  position: absolute;
+  padding: 1px 0px;
+  background-color: black;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -20px;
+  right: -20px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+.progress-line .html span::after {
+  content: '90%';
+}
+.progress-line .css span::after {
+  content: '90%';
+}
+.progress-line .js span::after {
+  content: '90%';
+}
+.progress-line .react span::after {
+  content: '90%';
+}
+
+.progress-line .tailwind span::after {
+  content: '90%';
+}
+.progress-line span::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: black;
+  top: -20px;
+  right: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideRight {
