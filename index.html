@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,14 +25,17 @@
         >Portfolio</a
       >
       <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About Me</a>
-        <a href="#">Skill</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#services">Skill</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
-    <section class="home">
+    <section
+      class="home"
+      id="home"
+    >
       <div class="home-content">
         <h3>Hello,It's Me</h3>
         <h1>Anchal Jaiswal</h1>
@@ -43,10 +46,14 @@
           more.....
         </p>
         <div class="home-sc">
-          <a href="#"><i class="bx bxl-facebook"></i></a>
-          <a href="#"><i class="bx bxl-instagram"></i></a>
-          <a href="#"><i class="bx bxl-linkedin"></i></a>
-          <a href="#"><i class="bx bxl-github"></i></a>
+          <!-- <a href="#"><i class="bx bxl-facebook"></i></a> -->
+          <!-- <a href="#"><i class="bx bxl-instagram"></i></a> -->
+          <a href="https://www.linkedin.com/in/anchal-jaiswal-1839b6249/"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="https://github.com/anchalj7"
+            ><i class="bx bxl-github"></i
+          ></a>
         </div>
         <a
           href="#"
@@ -55,6 +62,7 @@
         >
       </div>
     </section>
+    <!-- About -->
     <section
       class="about"
       id="about"
@@ -68,38 +76,73 @@
       </div>
       <div class="about-text">
         <h2>About <span>Me</span></h2>
-        <h4>Web Developer</h4>
-        <p>
-          Anchal Jaiswal is an enthusiastic and driven diploma student in
-          Computer Science Engineering at Lovely Professional University,
-          currently maintaining an impressive CGPA of 8.74. With a strong
-          foundation in programming languages like Java, JavaScript, and C, she
-          also excels in modern web technologies such as React, Next.js,
-          Tailwind CSS, HTML, CSS, and MySQL. Her technical skills are supported
-          by hands-on experience in full-stack development, gained through her
-          internship at O7 Services, where she developed dynamic websites using
-          PHP, Bootstrap, and JavaScript. Anchal has worked on impactful
-          projects, including **CharityLoom**, a web platform designed to
-          facilitate the donation of food, clothes, and services. She also
-          developed a **Healthcare App** using Java and Android Studio, focused
-          on health tracking and patient care with a user-friendly UI/UX. These
-          projects reflect her ability to combine technical skills with social
-          impact. Certified in web development and Android app development, she
-          demonstrates a keen interest in continuous learning and innovation.
-          Recognized on the University Honor Roll for academic excellence,
-          Anchal is also active in extracurricular activities and cultural
-          events. With strong problem-solving abilities, a creative mindset, and
-          a collaborative spirit, she is eager to contribute to dynamic teams
-          and meaningful tech-driven solutions.
-        </p>
-        <a
-          href="#"
-          class="btn-box"
-          >More</a
+        <h4>Full Stack Developer</h4>
+
+        <!-- Short Description - Always visible -->
+        <div class="about-short">
+          <p>
+            Anchal Jaiswal is a passionate and dedicated B.Tech student in
+            Computer Science and Engineering at Lovely Professional University,
+            with a strong interest in full-stack web development, artificial
+            intelligence, and building technology-driven solutions for
+            real-world challenges.
+          </p>
+        </div>
+
+        <!-- Full Description - Hidden initially -->
+        <div
+          class="about-full"
+          style="display: none"
         >
+          <p>
+            She possesses a solid foundation in programming languages including
+            Java, JavaScript, and C, along with expertise in modern web
+            technologies such as React, Next.js, Node.js, Express.js, MongoDB,
+            Tailwind CSS, HTML, CSS, and MySQL. Currently, Anchal is pursuing a
+            MERN Stack Development with AI Internship, where she is enhancing
+            her skills in full-stack application development by integrating
+            AI-powered features into modern web applications.
+          </p>
+          <p>
+            During this internship, she developed a Disaster Relief Coordination
+            Platform, a comprehensive web application designed to streamline
+            emergency response by enabling incident reporting, volunteer
+            coordination, resource management, and real-time communication.
+          </p>
+          <p>
+            Beyond academics, Anchal actively participates in hackathons and
+            technical competitions. She participated in FullStack Intelligence
+            1.0, organized by Lovely Professional University (LPU) in
+            collaboration with Unstop, where her team secured the 2nd Runner-Up
+            position among numerous talented participants.
+          </p>
+          <p>
+            She has also developed impactful projects such as CharityLoom, a
+            donation platform that connects donors with NGOs for food, clothing,
+            wheelchairs, and other essential resources.
+          </p>
+          <p>
+            Committed to continuous learning and professional growth, Anchal
+            enjoys exploring emerging technologies, participating in coding
+            competitions, and collaborating on innovative projects. With a
+            combination of technical expertise, creativity, and a strong desire
+            to solve real-world problems, she aspires to contribute to impactful
+            software solutions while continuously expanding her knowledge in
+            full-stack development and AI.
+          </p>
+        </div>
+
+        <!-- Read More / Read Less Button -->
+        <button
+          id="readMoreBtn"
+          class="btn-box read-more-btn"
+        >
+          Read More <i class="bx bx-chevron-down"></i>
+        </button>
       </div>
     </section>
-    <section>
+    <!-- Services -->
+    <section id="services">
       <div
         class="services"
         id="services"
@@ -165,8 +208,22 @@
         </div>
       </div>
     </section>
-    <h1 class="sub-title">My <span>Skills</span></h1>
-    <section class="skills">
+    <!-- Skills -->
+    <section
+      class="skills"
+      id="skills"
+    >
+      <h1
+        class="sub-title"
+        style="
+          width: 100%;
+          text-align: center;
+          padding-bottom: 5px;
+          margin-bottom: 0;
+        "
+      >
+        My <span>Skills</span>
+      </h1>
       <div
         class="container1"
         id="skills"
@@ -328,6 +385,176 @@
         </div>
       </div>
     </section>
+    <!-- portfolio -->
+    <section id="portfolio">
+      <!-- Portfolio Section -->
+      <div id="portfolio">
+        <div
+          class="main-text"
+          id="project"
+        >
+          <h2>Latest<span>Projects</span></h2>
+
+          <div class="portfolio-content">
+            <!-- Project 1 -->
+            <div
+              class="row"
+              data-project="charityloom"
+            >
+              <img
+                src="larm-rmah-AEaTUnvneik-unsplash.jpg"
+                alt="CharityLoom Project"
+              />
+              <div class="layer">
+                <h5>CharityLoom</h5>
+                <p>
+                  A donation platform connecting donors with NGOs for food,
+                  clothes, wheelchairs, and essential supplies.
+                </p>
+                <a
+                  href="#"
+                  class="project-link"
+                  data-project="charityloom"
+                >
+                  <i
+                    class="bx bx-link-external"
+                    style="color: rgb(253, 158, 4)"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+              class="row"
+              data-project="disaster"
+            >
+              <img
+                src="chris-gallagher-4zxp5vlmvnI-unsplash.jpg"
+                alt="Disaster Relief Platform"
+              />
+              <div class="layer">
+                <h5>Disaster Relief Platform</h5>
+                <p>
+                  A full-stack disaster management platform for volunteer
+                  coordination.
+                </p>
+                <a
+                  href="#"
+                  class="project-link"
+                  data-project="disaster"
+                >
+                  <i
+                    class="bx bx-link-external"
+                    style="color: rgb(253, 158, 4)"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div
+              class="row"
+              data-project="coal-mining"
+            >
+              <img
+                src="coal-mining.jpg"
+                alt="Safety Monitoring System"
+              />
+              <div class="layer">
+                <h5>Safety Monitoring System</h5>
+                <p>
+                  AI-powered coal mining safety system with IoT sensors and
+                  RFID.
+                </p>
+                <a
+                  href="#"
+                  class="project-link"
+                  data-project="coal-mining"
+                >
+                  <i
+                    class="bx bx-link-external"
+                    style="color: rgb(253, 158, 4)"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Detail Modal - YEH NEE CHEEZE ADD KAREIN -->
+      <div
+        id="project-modal"
+        class="project-modal"
+      >
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div id="modal-body">
+            <!-- Content will be loaded here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Detail Modal/Page -->
+      <div
+        id="project-detail"
+        class="project-detail hidden"
+      >
+        <div class="project-detail-content">
+          <button class="close-detail">&times;</button>
+          <div id="project-detail-body">
+            <!-- Dynamic content will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section - NEW -->
+    <section id="contact">
+      <div class="contact-container">
+        <h2>Contact <span>Me</span></h2>
+        <form
+          class="contact-form"
+          id="contactForm"
+        >
+          <input
+            type="text"
+            placeholder="Your Name"
+            id="name"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            id="email"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Subject"
+            id="subject"
+          />
+          <textarea
+            placeholder="Message..."
+            id="message"
+            rows="5"
+          ></textarea>
+          <button
+            type="submit"
+            class="btn-box"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Anchal Jaiswal. All Rights Reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
