@@ -5,7 +5,7 @@ const projectData = {
     category: 'Full-Stack Development',
     year: '2026',
     status: 'Completed',
-    image: 'lexora.jpg',
+    image: 'sasun-bughdaryan-e11Oa3kvx4c-unsplash.jpg',
     description: `Lexora is a role-based legal consultation platform connecting clients with legal professionals, enabling service discovery, consultation booking, and legal document requests through a unified web application.`,
     longDescription: `
       <p><strong>Lexora</strong> is a comprehensive legal tech platform designed to bridge the gap between clients and legal professionals. The platform streamlines the process of finding legal services, booking consultations, and generating legal documents.</p>
@@ -114,7 +114,7 @@ const projectData = {
       'JWT',
       'Tailwind CSS',
     ],
-    github: 'https://github.com/yourusername/disaster-relief',
+    github: 'https://github.com/anchalj7/disaster-relief',
     demo: 'https://disaster--relief.vercel.app/',
     stats: {
       Volunteers: '1,000+',
@@ -174,12 +174,7 @@ if (navToggle && navbar) {
 }
 
 // ===== TYPED ROLE TEXT =====
-const roles = [
-  'Full-Stack Developer',
-  'MERN Stack Developer',
-  'AI Enthusiast',
-  'Problem Solver',
-];
+const roles = ['Full-Stack Developer', 'UI/UX Designer'];
 const typedEl = document.getElementById('typedRole');
 
 function typeLoop() {
@@ -303,6 +298,16 @@ function openProjectModal(projectId) {
     )
     .join('');
 
+  const isRealLink = (url) => !!url && url.trim() !== '#';
+
+  const githubHTML = isRealLink(project.github)
+    ? `<a href="${project.github}" target="_blank" rel="noopener"><i class="bx bxl-github"></i> View on GitHub</a>`
+    : `<span class="modal-link-disabled"><i class="bx bxl-github"></i> Repo coming soon</span>`;
+
+  const demoHTML = isRealLink(project.demo)
+    ? `<a href="${project.demo}" target="_blank" rel="noopener"><i class="bx bx-link-external"></i> Live Demo</a>`
+    : `<span class="modal-link-disabled"><i class="bx bx-link-external"></i> Demo coming soon</span>`;
+
   body.innerHTML = `
     <h2>${project.title}</h2>
     <div class="project-meta">
@@ -320,8 +325,8 @@ function openProjectModal(projectId) {
     <h4 style="margin-top: 24px;">Project Stats</h4>
     <div class="modal-stats">${statsHTML}</div>
     <div class="modal-links">
-      <a href="${project.github}" target="_blank" rel="noopener"><i class="bx bxl-github"></i> View on GitHub</a>
-      <a href="${project.demo}" target="_blank" rel="noopener"><i class="bx bx-link-external"></i> Live Demo</a>
+      ${githubHTML}
+      ${demoHTML}
     </div>
   `;
 
@@ -373,7 +378,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// ===== CONTACT FORM (client-side only — no backend wired up yet) =====
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 const sendBtn = document.getElementById('sendBtn');
