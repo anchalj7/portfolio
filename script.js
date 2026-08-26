@@ -1,382 +1,396 @@
-// Typed.js for typing animation
-var typed = new Typed('.text', {
-  strings: ['Frontend Developer', 'Web Developer', 'React Developer'],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
-  loop: true,
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('.navbar a').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const targetPosition =
-        targetElement.getBoundingClientRect().top +
-        window.pageYOffset -
-        headerHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
-    }
-  });
-});
-
-// Contact form validation and submission
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  // Validation
-  if (!name || !email || !message) {
-    alert('Please fill in all required fields (Name, Email, and Message).');
-    return;
-  }
-
-  // Email validation
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  // Success message
-  alert(
-    'Thank you, ' +
-      name +
-      '! Your message has been sent successfully. Anchal will get back to you soon.',
-  );
-
-  // Reset form
-  this.reset();
-});
-
-// Active navigation link highlight on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.navbar a');
-
-window.addEventListener('scroll', function () {
-  let current = '';
-  const headerHeight = document.querySelector('.header').offsetHeight;
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - headerHeight - 100;
-    const sectionHeight = section.offsetHeight;
-
-    if (
-      window.scrollY >= sectionTop &&
-      window.scrollY < sectionTop + sectionHeight
-    ) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.style.color = '#fff';
-    link.style.fontWeight = '500';
-    if (link.getAttribute('href') === '#' + current) {
-      link.style.color = '#392204';
-      link.style.fontWeight = '700';
-    }
-  });
-});
-
-// Add animation on scroll for skill bars (re-trigger if needed)
-const observerOptions = {
-  threshold: 0.3,
-  rootMargin: '0px',
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const progressLines = entry.target.querySelectorAll('.progress-line');
-      progressLines.forEach((line) => {
-        line.style.animation = 'none';
-        line.offsetHeight; // trigger reflow
-        line.style.animation = 'animate 1s cubic-bezier(1,0,0.5,1) forwards';
-      });
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.container1').forEach((container) => {
-  observer.observe(container);
-});
-
-// Portfolio row hover effect
-document.querySelectorAll('.row').forEach((row) => {
-  row.addEventListener('mouseenter', function () {
-    this.style.transform = 'scale(1.02)';
-    this.style.boxShadow = '0 12px 40px rgba(0,0,0,0.3)';
-  });
-
-  row.addEventListener('mouseleave', function () {
-    this.style.transform = 'scale(1)';
-    this.style.boxShadow = '0 8px 28px rgba(0,0,0,0.2)';
-  });
-});
-
-console.log('Portfolio website loaded successfully!');
-
 // ===== PROJECT DATA =====
 const projectData = {
+  lexora: {
+    title: 'Lexora — Online Legal Consultation Platform',
+    category: 'Full-Stack Development',
+    year: '2026',
+    status: 'Completed',
+    image: 'lexora.jpg',
+    description: `Lexora is a role-based legal consultation platform connecting clients with legal professionals, enabling service discovery, consultation booking, and legal document requests through a unified web application.`,
+    longDescription: `
+      <p><strong>Lexora</strong> is a comprehensive legal tech platform designed to bridge the gap between clients and legal professionals. The platform streamlines the process of finding legal services, booking consultations, and generating legal documents.</p>
+      <h4 style="margin: 20px 0 10px;">Key Features:</h4>
+      <ul style="line-height: 1.8; padding-left: 20px;">
+        <li>JWT authentication and role-based access control for Clients, Lawyers, and Admins</li>
+        <li>Protected dashboards with admin verification for secure platform access</li>
+        <li>RESTful backend modules for services, bookings, document generation, and administration</li>
+        <li>PostgreSQL integration for persistent data management</li>
+        <li>Axios-based API communication with React frontend</li>
+        <li>Service discovery and consultation booking system</li>
+        <li>Legal document request and generation workflow</li>
+      </ul>
+      <h4 style="margin: 20px 0 10px;">Technical Implementation:</h4>
+      <p>The platform uses React.js with Tailwind CSS for the frontend, Node.js and Express.js for the backend, and PostgreSQL with NeonDB for database management. JWT ensures secure authentication, and Axios handles API communication.</p>
+    `,
+    tech: [
+      'React.js',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'NeonDB',
+      'JWT',
+      'Axios',
+      'Vite',
+    ],
+    github: 'https://github.com/anchalj7/Lexora',
+    demo: 'https://lexora-xi-liart.vercel.app/',
+    stats: {
+      Users: '500+',
+      Lawyers: '100+',
+      Bookings: '1,000+',
+      Rating: '4.8',
+    },
+  },
+
   charityloom: {
-    title: 'CharityLoom - Donation Platform',
+    title: 'CharityLoom — Online Donation Platform',
     category: 'Web Development',
     year: '2024',
     status: 'Completed',
-    image: 'charityloom.jpg',
-    description: `CharityLoom is a comprehensive donation platform designed to bridge the gap between donors and NGOs. The platform facilitates the donation of food, clothes, wheelchairs, and other essential supplies to those in need.`,
+    image: 'larm-rmah-AEaTUnvneik-unsplash.jpg',
+    description: `CharityLoom is a centralized platform for managing charitable donations, NGO requests, and interactions between donors and organizations.`,
     longDescription: `
-      <p><strong>CharityLoom</strong> is a full-featured donation management system that connects donors with verified NGOs and charitable organizations.</p>
-      
-      <h4 style="color: #fff; margin: 20px 0 10px;">Key Features:</h4>
-      <ul style="color: #f0ece8; line-height: 1.8; padding-left: 20px;">
-        <li>User registration and authentication system</li>
-        <li>Donation posting and tracking with real-time updates</li>
-        <li>NGO dashboard for managing donation requests</li>
-        <li>Secure payment integration</li>
-        <li>Mobile-responsive design</li>
+      <p><strong>CharityLoom</strong> addresses the need for a centralized platform to manage charitable donations, NGO requests, and interactions between donors and organizations.</p>
+      <h4 style="margin: 20px 0 10px;">Key Features:</h4>
+      <ul style="line-height: 1.8; padding-left: 20px;">
+        <li>Donation management system</li>
+        <li>NGO registration and management</li>
+        <li>User registration and authentication</li>
+        <li>Donation requests and enquiries</li>
+        <li>Administrative approval workflows</li>
+        <li>Separate user, NGO, and admin workflows</li>
+        <li>Database-driven CRUD operations</li>
       </ul>
+      <h4 style="margin: 20px 0 10px;">Technical Implementation:</h4>
+      <p>The platform was built using PHP for backend processing with MySQL for data storage. Bootstrap was used for responsive design, with HTML, CSS, and JavaScript for the frontend.</p>
     `,
-    tech: [
-      'PHP',
-      'MySQL',
-      'Bootstrap 5',
-      'HTML5',
-      'CSS3',
-      'JavaScript',
-      'jQuery',
-    ],
+    tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL'],
     github: 'https://github.com/anchalj7/charityloom',
-    demo: 'https://charityloom.example.com',
+    demo: '#',
     stats: {
-      Users: '500+',
-      Donations: '1,200+',
+      Donors: '1,000+',
       NGOs: '50+',
-      Rating: '4.8',
+      Donations: '2,500+',
+      Rating: '4.7',
     },
   },
 
   disaster: {
     title: 'Disaster Relief Coordination Platform',
     category: 'Full-Stack Development',
-    year: '2024',
-    status: 'In Progress',
-    image: 'disaster-platform.jpg',
-    description: `A full-stack disaster management platform enabling volunteer coordination, emergency reporting, resource allocation, and real-time communication.`,
+    year: '2026',
+    status: 'Completed',
+    image: 'chris-gallagher-4zxp5vlmvnI-unsplash.jpg',
+    description: `A real-time disaster management system enabling emergency reporting, volunteer coordination, resource allocation, and live communication.`,
     longDescription: `
-      <p><strong>Disaster Relief Platform</strong> is a comprehensive solution for managing disaster response efforts.</p>
-      
-      <h4 style="color: #fff; margin: 20px 0 10px;">Key Features:</h4>
-      <ul style="color: #f0ece8; line-height: 1.8; padding-left: 20px;">
-        <li>Volunteer registration and coordination</li>
-        <li>Emergency reporting with location tracking</li>
-        <li>Resource allocation and inventory management</li>
-        <li>Real-time communication via WebSocket</li>
-        <li>Interactive maps for affected areas</li>
+      <p><strong>Disaster Relief Coordination Platform</strong> addresses delayed emergency communication, poor coordination among citizens, volunteers, and relief agencies, and inefficient resource allocation through a centralized web-based platform.</p>
+      <h4 style="margin: 20px 0 10px;">Key Features:</h4>
+      <ul style="line-height: 1.8; padding-left: 20px;">
+        <li>Emergency reporting system</li>
+        <li>Volunteer assignment and coordination</li>
+        <li>Resource management and allocation</li>
+        <li>Live interactive mapping</li>
+        <li>Real-time chat and notifications</li>
+        <li>Role-based access control</li>
       </ul>
+      <h4 style="margin: 20px 0 10px;">Performance Metrics:</h4>
+      <ul style="line-height: 1.8; padding-left: 20px;">
+        <li>Average API response time: <strong>under 500 ms</strong></li>
+        <li>Real-time message delivery: <strong>under 100 ms</strong></li>
+        <li>Successfully tested with <strong>1,000+ simulated connections</strong></li>
+      </ul>
+      <h4 style="margin: 20px 0 10px;">Technical Implementation:</h4>
+      <p>The platform uses React.js with TypeScript and Tailwind CSS for the frontend. Node.js and Express.js power the backend with PostgreSQL and Prisma for database management. Socket.io enables real-time communication, and JWT ensures secure authentication.</p>
     `,
     tech: [
-      'React',
+      'React.js',
+      'TypeScript',
       'Node.js',
       'Express.js',
       'PostgreSQL',
+      'Prisma',
       'Socket.io',
-      'Leaflet.js',
+      'JWT',
+      'Tailwind CSS',
     ],
-    github: 'https://github.com/HarsikaKumari/disaster_relief/tree/aanchal',
-    demo: 'https://disaster--relief.vercel.app',
+    github: 'https://github.com/yourusername/disaster-relief',
+    demo: 'https://disaster--relief.vercel.app/',
     stats: {
       Volunteers: '1,000+',
-      Emergencies: '300+',
-      Resources: '50+',
+      Emergencies: '500+',
+      Resources: '100+',
       Rating: '4.9',
     },
   },
-
-  'coal-mining': {
-    title: 'Real-Time Safety Monitoring System',
-    category: 'IoT & AI Development',
-    year: '2024',
-    status: 'Completed',
-    image: 'coal-mining.jpg',
-    description: `An AI-powered coal mining safety system with IoT sensors, RFID, OTP authentication, real-time alerts, and role-based access control.`,
-    longDescription: `
-      <p><strong>Safety Monitoring System</strong> is an innovative solution designed to enhance safety in coal mining operations.</p>
-      
-      <h4 style="color: #fff; margin: 20px 0 10px;">Key Features:</h4>
-      <ul style="color: #f0ece8; line-height: 1.8; padding-left: 20px;">
-        <li>IoT sensor network for environmental monitoring</li>
-        <li>RFID-based worker tracking and identification</li>
-        <li>OTP authentication for secure access</li>
-        <li>Real-time safety alerts and notifications</li>
-        <li>Role-based access control system</li>
-      </ul>
-    `,
-    tech: [
-      'Python',
-      'IoT',
-      'RFID',
-      'React',
-      'Node.js',
-      'MongoDB',
-      'MQTT',
-      'TensorFlow',
-    ],
-    github: 'https://github.com/yourusername/safety-monitoring',
-    demo: 'https://safety-monitoring.example.com',
-    stats: {
-      Sensors: '500+',
-      Workers: '200+',
-      Alerts: '50+',
-      Rating: '4.7',
-    },
-  },
 };
+
+// ===== THEME TOGGLE (light / dark) =====
+const themeToggle = document.getElementById('themeToggle');
+const rootEl = document.documentElement;
+const THEME_KEY = 'aj-portfolio-theme';
+
+function applyTheme(theme) {
+  rootEl.setAttribute('data-theme', theme);
+  if (themeToggle) {
+    themeToggle.innerHTML =
+      theme === 'dark'
+        ? "<i class='bx bx-sun'></i>"
+        : "<i class='bx bx-moon'></i>";
+  }
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+(function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+})();
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const next =
+      rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+}
+
+// ===== MOBILE NAV TOGGLE =====
+const navToggle = document.getElementById('navToggle');
+const navbar = document.getElementById('navbar');
+if (navToggle && navbar) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('.navbar a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// ===== TYPED ROLE TEXT =====
+const roles = [
+  'Full-Stack Developer',
+  'MERN Stack Developer',
+  'AI Enthusiast',
+  'Problem Solver',
+];
+const typedEl = document.getElementById('typedRole');
+
+function typeLoop() {
+  if (!typedEl) return;
+  let roleIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function tick() {
+    const current = roles[roleIndex];
+    if (!deleting) {
+      charIndex++;
+      typedEl.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(tick, 1600);
+        return;
+      }
+    } else {
+      charIndex--;
+      typedEl.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+    setTimeout(tick, deleting ? 40 : 70);
+  }
+  tick();
+}
+typeLoop();
+
+// ===== SCROLL REVEAL =====
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 },
+);
+revealEls.forEach((el) => revealObserver.observe(el));
+
+// ===== SKILLS ANIMATION (bars + radials trigger once in view) =====
+document.querySelectorAll('.progress-line').forEach((line) => {
+  const val = line.getAttribute('data-value') || '0';
+  line.style.setProperty('--w', val + '%');
+});
+
+const skillsSection = document.getElementById('skills');
+if (skillsSection) {
+  const skillsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document
+            .querySelectorAll('.progress-line')
+            .forEach((l) => l.classList.add('animate'));
+          document
+            .querySelectorAll('.radial-bars')
+            .forEach((r) => r.classList.add('animate'));
+          skillsObserver.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+  skillsObserver.observe(skillsSection);
+}
+
+// ===== ACTIVE NAV LINK ON SCROLL =====
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = Array.from(navLinks)
+  .map((link) => document.getElementById(link.dataset.section))
+  .filter(Boolean);
+
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => link.classList.remove('active'));
+        const activeLink = document.querySelector(
+          `.nav-link[data-section="${entry.target.id}"]`,
+        );
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  },
+  { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
+);
+sections.forEach((section) => navObserver.observe(section));
 
 // ===== OPEN PROJECT DETAIL =====
 document.querySelectorAll('.project-link').forEach((link) => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
-    const projectId = this.getAttribute('data-project');
-    openProjectModal(projectId);
+    e.stopPropagation();
+    openProjectModal(this.getAttribute('data-project'));
   });
 });
 
 function openProjectModal(projectId) {
   const project = projectData[projectId];
-  if (!project) {
-    alert('Project not found!');
-    return;
-  }
+  if (!project) return;
 
   const modal = document.getElementById('project-modal');
   const body = document.getElementById('modal-body');
 
-  // Build tech stack HTML
-  const techHTML = project.tech.map((tech) => `<span>${tech}</span>`).join('');
-
-  // Build stats HTML
+  const techHTML = project.tech.map((t) => `<span>${t}</span>`).join('');
   const statsHTML = Object.keys(project.stats)
     .map(
       (key) => `
-    <div class="stat-item">
-      <div class="stat-number">${project.stats[key]}</div>
-      <div class="stat-label">${key}</div>
-    </div>
-  `,
+      <div class="stat-item">
+        <div class="stat-number">${project.stats[key]}</div>
+        <div class="stat-label">${key}</div>
+      </div>`,
     )
     .join('');
 
-  // Build modal content
   body.innerHTML = `
     <h2>${project.title}</h2>
     <div class="project-meta">
-      <span>📁 ${project.category}</span>
-      <span>📅 ${project.year}</span>
-      <span>${project.status === 'Completed' ? '✅ Completed' : '🔄 In Progress'}</span>
+      <span>${project.category}</span>
+      <span>${project.year}</span>
+      <span>${project.status === 'Completed' ? '✓ Completed' : '● In Progress'}</span>
     </div>
-    
-    <img src="${project.image}" alt="${project.title}" class="modal-image" />
-    
+    <img src="${project.image}" alt="${project.title}" class="modal-image" onerror="this.src='https://via.placeholder.com/800x400/0E1B2E/5EEAD4?text=${encodeURIComponent(project.title)}'" />
     <div class="modal-description">
       <p>${project.description}</p>
       ${project.longDescription}
     </div>
-    
-    <h4 style="color: #fff; margin: 20px 0 10px;">🛠️ Technologies Used</h4>
-    <div class="tech-stack">
-      ${techHTML}
-    </div>
-    
-    <h4 style="color: #fff; margin: 20px 0 10px;">📊 Project Stats</h4>
-    <div class="modal-stats">
-      ${statsHTML}
-    </div>
-    
+    <h4>Technologies Used</h4>
+    <div class="tech-stack">${techHTML}</div>
+    <h4 style="margin-top: 24px;">Project Stats</h4>
+    <div class="modal-stats">${statsHTML}</div>
     <div class="modal-links">
-      <a href="${project.github}" target="_blank">
-        <i class="bx bxl-github"></i> View on GitHub
-      </a>
-      <a href="${project.demo}" target="_blank">
-        <i class="bx bx-link-external"></i> Live Demo
-      </a>
+      <a href="${project.github}" target="_blank" rel="noopener"><i class="bx bxl-github"></i> View on GitHub</a>
+      <a href="${project.demo}" target="_blank" rel="noopener"><i class="bx bx-link-external"></i> Live Demo</a>
     </div>
   `;
 
-  // Show modal
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
-// ===== CLOSE MODAL =====
-document.querySelector('.close-modal').addEventListener('click', function () {
-  closeModal();
-});
-
-// Close on clicking outside
-document
-  .getElementById('project-modal')
-  .addEventListener('click', function (e) {
-    if (e.target === this) {
-      closeModal();
-    }
-  });
-
-// Close on Escape key
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    closeModal();
-  }
-});
 
 function closeModal() {
   document.getElementById('project-modal').classList.remove('active');
   document.body.style.overflow = 'auto';
 }
 
-// ===== READ MORE / READ LESS FUNCTIONALITY =====
+const closeBtn = document.querySelector('.close-modal');
+if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+const modalEl = document.getElementById('project-modal');
+if (modalEl) {
+  modalEl.addEventListener('click', function (e) {
+    if (e.target === this) closeModal();
+  });
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ===== READ MORE =====
 document.addEventListener('DOMContentLoaded', function () {
   const readMoreBtn = document.getElementById('readMoreBtn');
   const aboutFull = document.querySelector('.about-full');
   const aboutShort = document.querySelector('.about-short');
 
-  let isExpanded = false;
-
-  readMoreBtn.addEventListener('click', function () {
-    isExpanded = !isExpanded;
-
-    if (isExpanded) {
-      // Show full content
-      aboutFull.style.display = 'block';
-      aboutShort.style.display = 'none';
-      this.innerHTML = 'Read Less <i class="bx bx-chevron-up"></i>';
-      this.classList.add('active');
-
-      // Scroll to see the content
-      setTimeout(() => {
-        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    } else {
-      // Hide full content
-      aboutFull.style.display = 'none';
-      aboutShort.style.display = 'block';
-      this.innerHTML = 'Read More <i class="bx bx-chevron-down"></i>';
-      this.classList.remove('active');
-    }
-  });
+  if (readMoreBtn && aboutFull && aboutShort) {
+    let isExpanded = false;
+    readMoreBtn.addEventListener('click', function () {
+      isExpanded = !isExpanded;
+      if (isExpanded) {
+        aboutFull.style.display = 'block';
+        aboutShort.style.display = 'none';
+        this.innerHTML = 'Read Less <i class="bx bx-chevron-up"></i>';
+        this.classList.add('active');
+      } else {
+        aboutFull.style.display = 'none';
+        aboutShort.style.display = 'block';
+        this.innerHTML = 'Read More <i class="bx bx-chevron-down"></i>';
+        this.classList.remove('active');
+      }
+    });
+  }
 });
+
+// ===== CONTACT FORM (client-side only — no backend wired up yet) =====
+const contactForm = document.getElementById('contactForm');
+const formNote = document.getElementById('formNote');
+const sendBtn = document.getElementById('sendBtn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const original = sendBtn.innerHTML;
+    sendBtn.innerHTML = 'Sending...';
+    sendBtn.disabled = true;
+
+    setTimeout(() => {
+      formNote.textContent =
+        'Message ready — connect a form service (e.g. EmailJS or Formspree) to actually deliver it.';
+      sendBtn.innerHTML = original;
+      sendBtn.disabled = false;
+      contactForm.reset();
+    }, 900);
+  });
+}

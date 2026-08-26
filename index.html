@@ -6,553 +6,675 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Portfolio</title>
+    <title>Anchal Jaiswal — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Anchal Jaiswal — Full-Stack Developer building React, Node.js and AI-powered platforms."
+    />
+
     <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
-      href="style.css"
     />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
   </head>
   <body>
-    <header class="header">
+    <div
+      class="grid-bg"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="grain"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="header"
+      id="header"
+    >
       <a
-        href="#"
+        href="#home"
         class="logo"
-        >Portfolio</a
+        ><span class="logo-bracket">[</span>AJ<span class="logo-bracket"
+          >]</span
+        ></a
       >
-      <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#services">Skill</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-controls">
+        <nav
+          class="navbar"
+          id="navbar"
+        >
+          <a
+            href="#home"
+            class="nav-link"
+            data-section="home"
+            ><span class="nav-index">00</span>Home</a
+          >
+          <a
+            href="#about"
+            class="nav-link"
+            data-section="about"
+            ><span class="nav-index">01</span>About</a
+          >
+          <a
+            href="#services"
+            class="nav-link"
+            data-section="services"
+            ><span class="nav-index">02</span>Services</a
+          >
+          <a
+            href="#skills"
+            class="nav-link"
+            data-section="skills"
+            ><span class="nav-index">03</span>Skills</a
+          >
+          <a
+            href="#portfolio"
+            class="nav-link"
+            data-section="portfolio"
+            ><span class="nav-index">04</span>Work</a
+          >
+          <a
+            href="#contact"
+            class="nav-link"
+            data-section="contact"
+            ><span class="nav-index">05</span>Contact</a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Switch between light and dark theme"
+        >
+          <i class="bx bx-moon"></i>
+        </button>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+      </div>
     </header>
+
+    <!-- Home -->
     <section
       class="home"
       id="home"
     >
-      <div class="home-content">
-        <h3>Hello,It's Me</h3>
-        <h1>Anchal Jaiswal</h1>
-        <h3>And I'm a <span class="text"> </span></h3>
-        <p>
-          I'm a Student, learning html, css, javascript and bootsrap <br />
-          expertise is to create and web design, frontend Design, and many
-          more.....
+      <div
+        class="home-bg"
+        aria-hidden="true"
+      >
+        <img
+          src="Wallpaper.jpg"
+          alt=""
+          class="home-bg-img"
+        />
+        <div class="home-bg-fade"></div>
+      </div>
+
+      <div class="home-inner">
+        <p class="eyebrow reveal">
+          <span class="eyebrow-tag">SHEET 00 — SUBJECT</span>
         </p>
-        <div class="home-sc">
-          <!-- <a href="#"><i class="bx bxl-facebook"></i></a> -->
-          <!-- <a href="#"><i class="bx bxl-instagram"></i></a> -->
-          <a href="https://www.linkedin.com/in/anchal-jaiswal-1839b6249/"
+        <h3 class="greet reveal">Hi, I'm</h3>
+        <h1 class="name reveal">Anchal Jaiswal</h1>
+        <h2 class="role reveal">
+          <span id="typedRole"></span><span class="cursor">▍</span>
+        </h2>
+        <p class="tagline reveal">
+          Full-stack developer engineering React, Node.js and AI-powered
+          platforms — from legal consultation to disaster relief coordination.
+        </p>
+        <div class="hero-actions reveal">
+          <a
+            href="#portfolio"
+            class="btn-primary"
+            >View the work <i class="bx bx-right-arrow-alt"></i
+          ></a>
+          <a
+            href="#contact"
+            class="btn-ghost"
+            >Get in touch</a
+          >
+        </div>
+        <div class="home-sc reveal">
+          <a
+            href="https://www.linkedin.com/in/anchal-jaiswal-1839b6249/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
             ><i class="bx bxl-linkedin"></i
           ></a>
-          <a href="https://github.com/anchalj7"
+          <a
+            href="https://github.com/anchalj7"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
             ><i class="bx bxl-github"></i
           ></a>
+          <a
+            href="mailto:anchaljaiswal782@gmail.com"
+            aria-label="Email"
+            ><i class="bx bx-envelope"></i
+          ></a>
         </div>
-        <a
-          href="#"
-          class="btn-box"
-          >More About Me</a
-        >
       </div>
+
+      <a
+        href="#about"
+        class="scroll-cue"
+        aria-label="Scroll to About"
+        ><span></span>Scroll</a
+      >
     </section>
+
     <!-- About -->
     <section
       class="about"
       id="about"
     >
-      <div class="about-img">
-        <img
-          src="1675600202273 (2).jpg"
-          class="profile"
-          alt="about"
-        />
-      </div>
-      <div class="about-text">
+      <div class="section-head reveal">
+        <span class="section-tag">SHEET 01 — PROFILE</span>
         <h2>About <span>Me</span></h2>
-        <h4>Full Stack Developer</h4>
-
-        <!-- Short Description - Always visible -->
-        <div class="about-short">
-          <p>
-            Anchal Jaiswal is a passionate and dedicated B.Tech student in
-            Computer Science and Engineering at Lovely Professional University,
-            with a strong interest in full-stack web development, artificial
-            intelligence, and building technology-driven solutions for
-            real-world challenges.
-          </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="bracket-frame about-img">
+            <img
+              src="1675600202273 (2).jpg"
+              alt="Anchal Jaiswal"
+              class="profile"
+            />
+          </div>
+          <ul class="spec-list">
+            <li>
+              <span>Base</span><span>Lovely Professional University</span>
+            </li>
+            <li><span>Track</span><span>B.Tech CSE</span></li>
+            <li><span>Focus</span><span>Full-Stack + AI</span></li>
+            <li>
+              <span>Status</span
+              ><span class="status-dot">Open to opportunities</span>
+            </li>
+          </ul>
         </div>
-
-        <!-- Full Description - Hidden initially -->
-        <div
-          class="about-full"
-          style="display: none"
-        >
-          <p>
-            She possesses a solid foundation in programming languages including
-            Java, JavaScript, and C, along with expertise in modern web
-            technologies such as React, Next.js, Node.js, Express.js, MongoDB,
-            Tailwind CSS, HTML, CSS, and MySQL. Currently, Anchal is pursuing a
-            MERN Stack Development with AI Internship, where she is enhancing
-            her skills in full-stack application development by integrating
-            AI-powered features into modern web applications.
-          </p>
-          <p>
-            During this internship, she developed a Disaster Relief Coordination
-            Platform, a comprehensive web application designed to streamline
-            emergency response by enabling incident reporting, volunteer
-            coordination, resource management, and real-time communication.
-          </p>
-          <p>
-            Beyond academics, Anchal actively participates in hackathons and
-            technical competitions. She participated in FullStack Intelligence
-            1.0, organized by Lovely Professional University (LPU) in
-            collaboration with Unstop, where her team secured the 2nd Runner-Up
-            position among numerous talented participants.
-          </p>
-          <p>
-            She has also developed impactful projects such as CharityLoom, a
-            donation platform that connects donors with NGOs for food, clothing,
-            wheelchairs, and other essential resources.
-          </p>
-          <p>
-            Committed to continuous learning and professional growth, Anchal
-            enjoys exploring emerging technologies, participating in coding
-            competitions, and collaborating on innovative projects. With a
-            combination of technical expertise, creativity, and a strong desire
-            to solve real-world problems, she aspires to contribute to impactful
-            software solutions while continuously expanding her knowledge in
-            full-stack development and AI.
-          </p>
+        <div class="about-text reveal">
+          <h4>Full-Stack Developer</h4>
+          <div class="about-short">
+            <p>
+              Anchal Jaiswal is a passionate and dedicated B.Tech student in
+              Computer Science and Engineering at Lovely Professional
+              University, with a strong interest in full-stack web development,
+              artificial intelligence, and building technology-driven solutions
+              for real-world challenges.
+            </p>
+          </div>
+          <div
+            class="about-full"
+            style="display: none"
+          >
+            <p>
+              She possesses a solid foundation in programming languages
+              including Java, JavaScript, C, and C++, along with expertise in
+              modern web technologies such as React, Next.js, Node.js,
+              Express.js, MongoDB, PostgreSQL, Tailwind CSS, HTML, CSS, and
+              MySQL.
+            </p>
+            <p>
+              Currently, Anchal is pursuing a MERN Stack Development with AI
+              Internship, where she is enhancing her skills in full-stack
+              application development by integrating AI-powered features into
+              modern web applications.
+            </p>
+            <p>
+              During this internship, she developed a Disaster Relief
+              Coordination Platform, a comprehensive web application designed to
+              streamline emergency response by enabling incident reporting,
+              volunteer coordination, resource management, and real-time
+              communication.
+            </p>
+            <p>
+              Beyond academics, Anchal actively participates in hackathons and
+              technical competitions. She participated in FullStack Intelligence
+              1.0, organized by LPU in collaboration with Unstop, where her team
+              secured the 2nd Runner-Up position among numerous talented
+              participants.
+            </p>
+            <p>
+              She has also developed impactful projects such as Lexora — a legal
+              consultation platform, and CharityLoom — a donation platform
+              connecting donors with NGOs for essential resources.
+            </p>
+            <p>
+              Committed to continuous learning and professional growth, Anchal
+              enjoys exploring emerging technologies, participating in coding
+              competitions, and collaborating on innovative projects.
+            </p>
+          </div>
+          <button
+            id="readMoreBtn"
+            class="btn-ghost read-more-btn"
+          >
+            Read More <i class="bx bx-chevron-down"></i>
+          </button>
         </div>
-
-        <!-- Read More / Read Less Button -->
-        <button
-          id="readMoreBtn"
-          class="btn-box read-more-btn"
-        >
-          Read More <i class="bx bx-chevron-down"></i>
-        </button>
       </div>
     </section>
+
     <!-- Services -->
     <section id="services">
-      <div
-        class="services"
-        id="services"
-      >
+      <div class="services">
         <div class="container">
-          <h1 class="sub-title">My<span>Services</span></h1>
+          <div class="section-head reveal center">
+            <span class="section-tag">SHEET 02 — CAPABILITIES</span>
+            <h2>What I <span>Do</span></h2>
+          </div>
           <div class="services-list">
-            <div>
-              <i
-                class="bx bx-code"
-                style="color: #392204"
-              ></i>
-              <h2>Web Developer</h2>
+            <div class="service-card reveal">
+              <span class="service-index">01</span>
+              <i class="bx bx-code-alt"></i>
+              <h3>Full Stack Development</h3>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut,
-                rerum repellendus, hic quo culpa nam, vel odit saepe perferendis
-                inventore illum libero dolorum recusandae. Ratione odio voluptas
-                cumque autem fugit.
+                Develop modern, scalable, and responsive web applications using
+                the MERN stack, PHP, MySQL, and REST APIs with secure
+                authentication and seamless user experiences.
               </p>
               <a
-                href=""
+                href="#portfolio"
                 class="read"
-                >Learn More</a
+                >See it in the work →</a
               >
             </div>
-            <div>
-              <i
-                class="bx bx-crop"
-                style="color: #392204"
-              ></i>
-              <h2>Web Developer</h2>
+            <div class="service-card reveal">
+              <span class="service-index">02</span>
+              <i class="bx bx-palette"></i>
+              <h3>UI/UX Design</h3>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut,
-                rerum repellendus, hic quo culpa nam, vel odit saepe perferendis
-                inventore illum libero dolorum recusandae. Ratione odio voluptas
-                cumque autem fugit.
+                Design clean, intuitive, and user-friendly interfaces with a
+                focus on responsive layouts, accessibility, wireframing, and
+                engaging user experiences.
               </p>
               <a
-                href=""
+                href="#portfolio"
                 class="read"
-                >Learn More</a
+                >See it in the work →</a
               >
             </div>
-            <div>
-              <i
-                class="bx bxl-apple"
-                style="color: #392204"
-              ></i>
-              <h2>Web Developer</h2>
+            <div class="service-card reveal">
+              <span class="service-index">03</span>
+              <i class="bx bxs-brush"></i>
+              <h3>Graphic Design</h3>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut,
-                rerum repellendus, hic quo culpa nam, vel odit saepe perferendis
-                inventore illum libero dolorum recusandae. Ratione odio voluptas
-                cumque autem fugit.
+                Create professional social media posts, presentations, posters,
+                banners, certificates, portfolios, and marketing materials with
+                modern and visually appealing designs.
               </p>
               <a
-                href=""
+                href="#portfolio"
                 class="read"
-                >Learn More</a
+                >See it in the work →</a
               >
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <!-- Skills -->
     <section
       class="skills"
       id="skills"
     >
-      <h1
-        class="sub-title"
-        style="
-          width: 100%;
-          text-align: center;
-          padding-bottom: 5px;
-          margin-bottom: 0;
-        "
-      >
-        My <span>Skills</span>
-      </h1>
-      <div
-        class="container1"
-        id="skills"
-      >
-        <h1 class="heading1">Technical Skills</h1>
+      <div class="section-head reveal center">
+        <span class="section-tag">SHEET 03 — SPECIFICATION</span>
+        <h2>My <span>Skills</span></h2>
+      </div>
 
-        <div class="technical-bars">
-          <div class="bar">
-            <i
-              class="bx bxl-html5"
-              style="color: #392204"
-            ></i>
-            <div class="info">
-              <span>HTML</span>
+      <div class="skills-grid">
+        <div class="container1 reveal">
+          <h3 class="heading1">Technical Skills</h3>
+          <div class="technical-bars">
+            <div class="bar">
+              <div class="info">
+                <i class="bx bxl-html5"></i><span>HTML</span><em>90%</em>
+              </div>
+              <div
+                class="progress-line"
+                data-value="90"
+              >
+                <span></span>
+              </div>
             </div>
-            <div class="progress-line html">
-              <span></span>
+            <div class="bar">
+              <div class="info">
+                <i class="bx bxl-css3"></i><span>CSS</span><em>60%</em>
+              </div>
+              <div
+                class="progress-line"
+                data-value="60"
+              >
+                <span></span>
+              </div>
             </div>
-          </div>
-          <div class="bar">
-            <i
-              class="bx bxl-css3"
-              style="color: #392204"
-            ></i>
-            <div class="info">
-              <span>CSS</span>
+            <div class="bar">
+              <div class="info">
+                <i class="bx bxl-javascript"></i><span>JavaScript</span
+                ><em>50%</em>
+              </div>
+              <div
+                class="progress-line"
+                data-value="50"
+              >
+                <span></span>
+              </div>
             </div>
-            <div class="progress-line css">
-              <span></span>
+            <div class="bar">
+              <div class="info">
+                <i class="bx bxl-react"></i><span>React</span><em>75%</em>
+              </div>
+              <div
+                class="progress-line"
+                data-value="75"
+              >
+                <span></span>
+              </div>
             </div>
-          </div>
-          <div class="bar">
-            <i
-              class="bx bxl-javascript"
-              style="color: #392204"
-            ></i>
-            <div class="info">
-              <span>JavaScript</span>
-            </div>
-            <div class="progress-line js">
-              <span></span>
-            </div>
-          </div>
-          <div class="bar">
-            <i
-              class="bx bxl-react"
-              style="color: #392204"
-            ></i>
-            <div class="info">
-              <span>React</span>
-            </div>
-            <div class="progress-line react">
-              <span></span>
-            </div>
-          </div>
-          <div class="bar">
-            <i class="bx bxl-tailwind-css"></i>
-            <div class="info">
-              <span>Tailwind CSS</span>
-            </div>
-            <div class="progress-line tailwind">
-              <span></span>
+            <div class="bar">
+              <div class="info">
+                <i class="bx bxl-tailwind-css"></i><span>Tailwind CSS</span
+                ><em>80%</em>
+              </div>
+              <div
+                class="progress-line"
+                data-value="80"
+              >
+                <span></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="container1">
-        <h1 class="heading1">Professional Skills</h1>
-        <div class="radial-bars">
-          <div class="radial-bar">
-            <svg
-              x="0px"
-              y="0px"
-              viewBox="0 0 200 200"
-            >
-              <circle
-                class="progress-bar"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-              <circle
-                class="path path-1"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-            </svg>
-            <div class="percentage">90%</div>
-            <div class="text">Creativity</div>
-          </div>
-          <div class="radial-bar">
-            <svg
-              x="0px"
-              y="0px"
-              viewBox="0 0 200 200"
-            >
-              <circle
-                class="progress-bar"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-              <circle
-                class="path path-2"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-            </svg>
-            <div class="percentage">60%</div>
-            <div class="text">Communication</div>
-          </div>
-          <div class="radial-bar">
-            <svg
-              x="0px"
-              y="0px"
-              viewBox="0 0 200 200"
-            >
-              <circle
-                class="progress-bar"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-              <circle
-                class="path path-3"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-            </svg>
-            <div class="percentage">80%</div>
-            <div class="text">Problem Solving</div>
-          </div>
-          <div class="radial-bar">
-            <svg
-              x="0px"
-              y="0px"
-              viewBox="0 0 200 200"
-            >
-              <circle
-                class="progress-bar"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-              <circle
-                class="path path-4"
-                cx="100"
-                cy="100"
-                r="80"
-              ></circle>
-            </svg>
-            <div class="percentage">70%</div>
-            <div class="text">Teammate</div>
+        <div class="container1 reveal">
+          <h3 class="heading1">Professional Skills</h3>
+          <div class="radial-bars">
+            <div class="radial-bar">
+              <svg viewBox="0 0 200 200">
+                <circle
+                  class="progress-bar"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+                <circle
+                  class="path path-1"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+              </svg>
+              <div class="percentage">90%</div>
+              <div class="text">Creativity</div>
+            </div>
+            <div class="radial-bar">
+              <svg viewBox="0 0 200 200">
+                <circle
+                  class="progress-bar"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+                <circle
+                  class="path path-2"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+              </svg>
+              <div class="percentage">85%</div>
+              <div class="text">Communication</div>
+            </div>
+            <div class="radial-bar">
+              <svg viewBox="0 0 200 200">
+                <circle
+                  class="progress-bar"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+                <circle
+                  class="path path-3"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+              </svg>
+              <div class="percentage">80%</div>
+              <div class="text">Problem Solving</div>
+            </div>
+            <div class="radial-bar">
+              <svg viewBox="0 0 200 200">
+                <circle
+                  class="progress-bar"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+                <circle
+                  class="path path-4"
+                  cx="100"
+                  cy="100"
+                  r="80"
+                ></circle>
+              </svg>
+              <div class="percentage">85%</div>
+              <div class="text">Teamwork</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- portfolio -->
+
+    <!-- Portfolio -->
     <section id="portfolio">
-      <!-- Portfolio Section -->
-      <div id="portfolio">
-        <div
-          class="main-text"
-          id="project"
-        >
-          <h2>Latest<span>Projects</span></h2>
+      <div
+        class="main-text"
+        id="project"
+      >
+        <div class="section-head reveal center">
+          <span class="section-tag">SHEET 04 — BUILDS</span>
+          <h2>Latest <span>Projects</span></h2>
+        </div>
 
-          <div class="portfolio-content">
-            <!-- Project 1 -->
-            <div
-              class="row"
-              data-project="charityloom"
-            >
-              <img
-                src="larm-rmah-AEaTUnvneik-unsplash.jpg"
-                alt="CharityLoom Project"
-              />
-              <div class="layer">
-                <h5>CharityLoom</h5>
-                <p>
-                  A donation platform connecting donors with NGOs for food,
-                  clothes, wheelchairs, and essential supplies.
-                </p>
-                <a
-                  href="#"
-                  class="project-link"
-                  data-project="charityloom"
-                >
-                  <i
-                    class="bx bx-link-external"
-                    style="color: rgb(253, 158, 4)"
-                  ></i>
-                </a>
-              </div>
+        <div class="portfolio-content">
+          <div
+            class="row reveal bracket-frame"
+            data-project="lexora"
+          >
+            <span class="row-tag">FILE 01</span>
+            <img
+              src="https://images.unsplash.com/photo-1589829546156-2453bb4df29a?w=400&h=300&fit=crop"
+              alt="Lexora Legal Platform"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0E1B2E/5EEAD4?text=Lexora'
+              "
+            />
+            <div class="layer">
+              <h5>Lexora — Legal Platform</h5>
+              <p>
+                A role-based legal consultation platform connecting clients with
+                legal professionals for service discovery and booking.
+              </p>
+              <a
+                href="#"
+                class="project-link"
+                data-project="lexora"
+              >
+                <i class="bx bx-link-external"></i>
+              </a>
             </div>
+          </div>
 
-            <!-- Project 2 -->
-            <div
-              class="row"
-              data-project="disaster"
-            >
-              <img
-                src="chris-gallagher-4zxp5vlmvnI-unsplash.jpg"
-                alt="Disaster Relief Platform"
-              />
-              <div class="layer">
-                <h5>Disaster Relief Platform</h5>
-                <p>
-                  A full-stack disaster management platform for volunteer
-                  coordination.
-                </p>
-                <a
-                  href="#"
-                  class="project-link"
-                  data-project="disaster"
-                >
-                  <i
-                    class="bx bx-link-external"
-                    style="color: rgb(253, 158, 4)"
-                  ></i>
-                </a>
-              </div>
+          <div
+            class="row reveal bracket-frame"
+            data-project="charityloom"
+          >
+            <span class="row-tag">FILE 02</span>
+            <img
+              src="larm-rmah-AEaTUnvneik-unsplash.jpg"
+              alt="CharityLoom Project"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0E1B2E/5EEAD4?text=CharityLoom'
+              "
+            />
+            <div class="layer">
+              <h5>CharityLoom</h5>
+              <p>
+                A donation platform connecting donors with NGOs for food,
+                clothes, wheelchairs, and essential supplies.
+              </p>
+              <a
+                href="#"
+                class="project-link"
+                data-project="charityloom"
+              >
+                <i class="bx bx-link-external"></i>
+              </a>
             </div>
+          </div>
 
-            <!-- Project 3 -->
-            <div
-              class="row"
-              data-project="coal-mining"
-            >
-              <img
-                src="coal-mining.jpg"
-                alt="Safety Monitoring System"
-              />
-              <div class="layer">
-                <h5>Safety Monitoring System</h5>
-                <p>
-                  AI-powered coal mining safety system with IoT sensors and
-                  RFID.
-                </p>
-                <a
-                  href="#"
-                  class="project-link"
-                  data-project="coal-mining"
-                >
-                  <i
-                    class="bx bx-link-external"
-                    style="color: rgb(253, 158, 4)"
-                  ></i>
-                </a>
-              </div>
+          <div
+            class="row reveal bracket-frame"
+            data-project="disaster"
+          >
+            <span class="row-tag">FILE 03</span>
+            <img
+              src="chris-gallagher-4zxp5vlmvnI-unsplash.jpg"
+              alt="Disaster Relief Platform"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0E1B2E/5EEAD4?text=Disaster+Relief'
+              "
+            />
+            <div class="layer">
+              <h5>Disaster Relief Platform</h5>
+              <p>
+                A real-time disaster management platform for volunteer
+                coordination, emergency reporting, and resource allocation.
+              </p>
+              <a
+                href="#"
+                class="project-link"
+                data-project="disaster"
+              >
+                <i class="bx bx-link-external"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project Detail Modal - YEH NEE CHEEZE ADD KAREIN -->
       <div
         id="project-modal"
         class="project-modal"
       >
         <div class="modal-content">
           <span class="close-modal">&times;</span>
-          <div id="modal-body">
-            <!-- Content will be loaded here -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Detail Modal/Page -->
-      <div
-        id="project-detail"
-        class="project-detail hidden"
-      >
-        <div class="project-detail-content">
-          <button class="close-detail">&times;</button>
-          <div id="project-detail-body">
-            <!-- Dynamic content will be loaded here -->
-          </div>
+          <div id="modal-body"></div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section - NEW -->
+    <!-- Contact -->
     <section id="contact">
-      <div class="contact-container">
-        <h2>Contact <span>Me</span></h2>
+      <div class="contact-container reveal">
+        <span class="section-tag center">SHEET 05 — CONTACT</span>
+        <h2>Let's <span>Talk</span></h2>
+        <p class="contact-sub">
+          Have a project, an internship, or just want to say hi? My inbox is
+          open.
+        </p>
         <form
           class="contact-form"
           id="contactForm"
         >
-          <input
-            type="text"
-            placeholder="Your Name"
-            id="name"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            id="email"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Subject"
-            id="subject"
-          />
-          <textarea
-            placeholder="Message..."
-            id="message"
-            rows="5"
-          ></textarea>
+          <div class="field">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              placeholder="Jane Doe"
+              id="name"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              placeholder="jane@email.com"
+              id="email"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              placeholder="Let's build something"
+              id="subject"
+            />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              placeholder="Tell me a bit about it..."
+              id="message"
+              rows="5"
+            ></textarea>
+          </div>
           <button
             type="submit"
-            class="btn-box"
+            class="btn-primary"
+            id="sendBtn"
           >
-            Send Message
+            Send Message <i class="bx bx-right-arrow-alt"></i>
           </button>
+          <p
+            class="form-note"
+            id="formNote"
+            aria-live="polite"
+          ></p>
         </form>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-      <p>© 2026 Anchal Jaiswal. All Rights Reserved.</p>
+      <p>
+        [ AJ ] — © 2026 Anchal Jaiswal. Built with care, one component at a
+        time.
+      </p>
     </footer>
 
     <script src="script.js"></script>
