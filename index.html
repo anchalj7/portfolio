@@ -26,7 +26,7 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&family=Oswald:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -163,8 +163,6 @@
       </div>
     </header>
 
-    <!-- ================= HOME ================= -->
-
     <section
       class="home"
       id="home"
@@ -183,9 +181,19 @@
       </div>
 
       <div class="home-inner">
-        <h3 class="greet reveal">Hi, I'm</h3>
+        <h3 class="greet reveal">
+          <span
+            class="hero-monogram"
+            aria-hidden="true"
+            >AJ</span
+          >
+          <span>Anchal Jaiswal</span>
+          <span class="hero-kicker-role">FULL-STACK DEVELOPER</span>
+        </h3>
 
-        <h1 class="name reveal">Anchal Jaiswal</h1>
+        <h1 class="name reveal">
+          <span class="name-display">PORTFOLIO</span>
+        </h1>
 
         <h2 class="role reveal">
           <span id="typedRole"></span>
@@ -197,15 +205,28 @@
           platforms — from legal consultation to disaster relief coordination.
         </p>
 
+        <p
+          class="hero-hindi reveal"
+          lang="hi"
+        >
+          Stories shaped by ideas, design, and code.
+        </p>
+
         <div class="hero-actions reveal">
           <a
-            href="AnchalCV.pdf"
+            href="#portfolio"
             class="btn-primary"
+          >
+            View Projects
+            <i class="bx bx-right-arrow-alt"></i>
+          </a>
+          <a
+            href="AnchalCV.pdf"
+            class="btn-ghost"
           >
             Download CV
             <i class="bx bx-right-arrow-alt"></i>
           </a>
-
           <a
             href="#contact"
             class="btn-ghost"
@@ -418,8 +439,6 @@
       </div>
     </section>
 
-    <!-- ================= SKILLS ================= -->
-
     <section
       class="skills"
       id="skills"
@@ -606,6 +625,8 @@
       </div>
     </section>
 
+    <!-- Education -->
+
     <section
       class="education"
       id="education"
@@ -614,60 +635,50 @@
         <h2>My <span>Education</span></h2>
       </div>
 
-      <div class="education-container">
-        <div class="education-card reveal bracket-frame">
-          <div class="education-year">2025 — Present</div>
-
-          <div class="education-icon">
-            <i class="bx bx-graduation"></i>
+      <div class="education-grid">
+        <!-- B.Tech -->
+        <article class="education-card reveal">
+          <div class="edu-icon">
+            <img
+              src="logo.png"
+              alt="Lovely Professional University logo"
+              class="edu-icon-img"
+            />
           </div>
 
-          <div class="education-content">
-            <span class="education-label">
-              Computer Science & Engineering
-            </span>
+          <div class="edu-content">
+            <span class="edu-year">2025 — Present</span>
+            <h3>B.Tech CSE</h3>
+            <p>Lovely Professional University</p>
 
-            <h3>Lovely Professional University</h3>
-
-            <p class="education-location">Punjab, India</p>
-
-            <p class="education-description">
-              Pursuing Computer Science and Engineering with a strong interest
-              in full-stack development, artificial intelligence, UI/UX design,
-              and building technology-driven solutions.
-            </p>
-
-            <div class="education-tags">
-              <span> Computer Science </span>
-
-              <span> Full-Stack Development </span>
-
-              <span> AI </span>
-
-              <span> UI/UX </span>
+            <div class="edu-bottom">
+              <span>CGPA <strong>6.89</strong></span>
+              <span>Full-Stack + UI/UX</span>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="education-highlight reveal">
-          <div class="education-stat">
-            <strong> CSE </strong>
-
-            <span> Academic Track </span>
+        <!-- Diploma -->
+        <article class="education-card reveal">
+          <div class="edu-icon logo-icon">
+            <img
+              src="logo.png"
+              alt="Lovely Professional University logo"
+              class="edu-icon-img"
+            />
           </div>
 
-          <div class="education-stat">
-            <strong> 8.74 </strong>
+          <div class="edu-content">
+            <span class="edu-year">2022 — 2025</span>
+            <h3>Diploma in CSE</h3>
+            <p>Lovely Professional University</p>
 
-            <span> CGPA </span>
+            <div class="edu-bottom">
+              <span>CGPA <strong>8.87</strong></span>
+              <span>Completed</span>
+            </div>
           </div>
-
-          <div class="education-stat">
-            <strong> AI </strong>
-
-            <span> Current Focus </span>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -818,12 +829,47 @@
           <h2>Latest <span>Projects</span></h2>
         </div>
 
-        <div class="portfolio-content">
+        <div
+          class="project-filters reveal"
+          role="group"
+          aria-label="Filter projects"
+        >
+          <button
+            class="project-filter active"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          <button
+            class="project-filter"
+            type="button"
+            data-filter="development"
+            aria-pressed="false"
+          >
+            Development
+          </button>
+          <button
+            class="project-filter"
+            type="button"
+            data-filter="design"
+            aria-pressed="false"
+          >
+            UI/UX Design
+          </button>
+        </div>
+
+        <div
+          class="portfolio-content"
+          id="portfolioProjects"
+        >
           <!-- Project 01 -->
 
           <div
             class="row reveal bracket-frame"
             data-project="lexora"
+            data-category="development"
           >
             <span class="row-tag"> FILE 01 </span>
 
@@ -859,6 +905,7 @@
           <div
             class="row reveal bracket-frame"
             data-project="charityloom"
+            data-category="development"
           >
             <span class="row-tag"> FILE 02 </span>
 
@@ -894,6 +941,7 @@
           <div
             class="row reveal bracket-frame"
             data-project="disaster"
+            data-category="development"
           >
             <span class="row-tag"> FILE 03 </span>
 
@@ -923,6 +971,83 @@
               </a>
             </div>
           </div>
+
+          <!-- UI/UX Design -->
+          <div
+            class="row reveal bracket-frame design-project"
+            data-project="ca1"
+            data-category="design"
+          >
+            <span class="row-tag"> FIGMA DESIGN </span>
+
+            <div
+              class="design-artwork"
+              aria-hidden="true"
+            >
+              <span class="design-artwork-label">UI / UX</span>
+              <div class="design-canvas">
+                <span class="design-canvas-kicker">FIGMA FILE · 01</span>
+                <span class="design-canvas-title">CA1</span>
+                <span class="design-canvas-lines"></span>
+                <span class="design-canvas-chip">DESIGN CONCEPT</span>
+              </div>
+              <span class="design-artwork-index">SELECTED DESIGN WORK</span>
+            </div>
+
+            <div class="layer">
+              <h5>CA1 — UI/UX Design</h5>
+              <p>
+                A Figma design project. Open the case study to explore the
+                original file.
+              </p>
+              <a
+                href="#"
+                class="project-link"
+                data-project="ca1"
+                aria-label="Explore CA1 UI/UX design project"
+              >
+                <i class="bx bx-link-external"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="row reveal bracket-frame design-project"
+            data-project="landslide"
+            data-category="design"
+          >
+            <span class="row-tag"> FIGMA DESIGN </span>
+
+            <div
+              class="design-artwork"
+              aria-hidden="true"
+            >
+              <span class="design-artwork-label">ALERT APP</span>
+              <div class="design-canvas">
+                <span class="design-canvas-kicker">FIGMA FILE · 02</span>
+                <span class="design-canvas-title">LANDSLIDE</span>
+                <span class="design-canvas-lines"></span>
+                <span class="design-canvas-chip">MOBILE APP DESIGN</span>
+              </div>
+              <span class="design-artwork-index">SAFETY · ALERTS · MOBILE</span>
+            </div>
+
+            <div class="layer">
+              <h5>Landslide Alert — Mobile Design</h5>
+              <p>
+                A mobile UI/UX design for landslide alerts. Open the Figma file
+                to explore the screens.
+              </p>
+              <a
+                href="#"
+                class="project-link"
+                data-project="landslide"
+                aria-label="Explore Landslide Alert mobile design project"
+              >
+                <i class="bx bx-link-external"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -938,12 +1063,8 @@
       </div>
     </section>
 
-    <!-- ================= CONTACT ================= -->
-
     <section id="contact">
       <div class="contact-container reveal">
-        <span class="section-tag center"> SHEET 07 — CONTACT </span>
-
         <h2>Let's <span>Talk</span></h2>
 
         <p class="contact-sub">

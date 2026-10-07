@@ -123,6 +123,36 @@ const projectData = {
       Rating: '4.9',
     },
   },
+
+  ca1: {
+    title: 'CA1 — UI/UX Design',
+    category: 'UI/UX Design',
+    year: '',
+    status: 'Figma Design',
+    description:
+      'A UI/UX design project created in Figma. Open the original file to explore the design work.',
+    longDescription:
+      '<p>This case study links directly to the Figma design file.</p>',
+    tech: ['Figma', 'UI/UX Design'],
+    figma:
+      'https://www.figma.com/design/nKWJwwUB3zQIUyLIKyiBh7/CA1?node-id=0-1&p=f&m=draw',
+    stats: {},
+  },
+
+  landslide: {
+    title: 'Landslide Alert — Mobile Design',
+    category: 'UI/UX Design',
+    year: '',
+    status: 'Figma Design',
+    description:
+      'A mobile UI/UX design focused on landslide alerts and helping people access safety information.',
+    longDescription:
+      '<p>Explore the mobile design screens and interactions in the original Figma file.</p>',
+    tech: ['Figma', 'Mobile UI/UX', 'Alert Design'],
+    figma:
+      'https://www.figma.com/design/At7FcHebhjDXDahevopBQM/Landslide-alert-mobile-design?node-id=2088-696&m=draw',
+    stats: {},
+  },
 };
 
 // ===== THEME TOGGLE (light / dark) =====
@@ -271,6 +301,31 @@ const navObserver = new IntersectionObserver(
 );
 sections.forEach((section) => navObserver.observe(section));
 
+// ===== PROJECT CATEGORY FILTERS =====
+const projectFilters = document.querySelectorAll('.project-filter');
+const projectCards = document.querySelectorAll(
+  '.portfolio-content [data-category]',
+);
+
+projectFilters.forEach((filter) => {
+  filter.addEventListener('click', () => {
+    const selectedCategory = filter.getAttribute('data-filter');
+
+    projectFilters.forEach((button) => {
+      const isActive = button === filter;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+
+    projectCards.forEach((card) => {
+      const isVisible =
+        selectedCategory === 'all' ||
+        card.getAttribute('data-category') === selectedCategory;
+      card.hidden = !isVisible;
+    });
+  });
+});
+
 // ===== OPEN PROJECT DETAIL =====
 document.querySelectorAll('.project-link').forEach((link) => {
   link.addEventListener('click', function (e) {
@@ -307,27 +362,34 @@ function openProjectModal(projectId) {
   const demoHTML = isRealLink(project.demo)
     ? `<a href="${project.demo}" target="_blank" rel="noopener"><i class="bx bx-link-external"></i> Live Demo</a>`
     : `<span class="modal-link-disabled"><i class="bx bx-link-external"></i> Demo coming soon</span>`;
+  const figmaHTML = isRealLink(project.figma)
+    ? `<a href="${project.figma}" target="_blank" rel="noopener noreferrer"><i class="bx bxl-figma"></i> Open in Figma</a>`
+    : '';
+  const projectLinks = project.figma ? figmaHTML : `${githubHTML}${demoHTML}`;
+  const projectImage = project.image
+    ? `<img src="${project.image}" alt="${project.title}" class="modal-image" onerror="this.src='https://via.placeholder.com/800x400/0E1B2E/5EEAD4?text=${encodeURIComponent(project.title)}'" />`
+    : '';
+  const projectStats = Object.keys(project.stats).length
+    ? `<h4 style="margin-top: 24px;">Project Stats</h4>
+       <div class="modal-stats">${statsHTML}</div>`
+    : '';
+  const projectMeta = [project.category, project.year, project.status]
+    .filter(Boolean)
+    .map((item) => `<span>${item}</span>`)
+    .join('');
 
   body.innerHTML = `
     <h2>${project.title}</h2>
-    <div class="project-meta">
-      <span>${project.category}</span>
-      <span>${project.year}</span>
-      <span>${project.status === 'Completed' ? '✓ Completed' : '● In Progress'}</span>
-    </div>
-    <img src="${project.image}" alt="${project.title}" class="modal-image" onerror="this.src='https://via.placeholder.com/800x400/0E1B2E/5EEAD4?text=${encodeURIComponent(project.title)}'" />
+    <div class="project-meta">${projectMeta}</div>
+    ${projectImage}
     <div class="modal-description">
       <p>${project.description}</p>
       ${project.longDescription}
     </div>
     <h4>Technologies Used</h4>
     <div class="tech-stack">${techHTML}</div>
-    <h4 style="margin-top: 24px;">Project Stats</h4>
-    <div class="modal-stats">${statsHTML}</div>
-    <div class="modal-links">
-      ${githubHTML}
-      ${demoHTML}
-    </div>
+    ${projectStats}
+    <div class="modal-links">${projectLinks}</div>
   `;
 
   modal.classList.add('active');
